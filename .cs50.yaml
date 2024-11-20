@@ -1,0 +1,6 @@
+check50:
+  checks:
+    hello world:
+        - run:python3 hello.py
+          student: hello, world!
+          exit:0
