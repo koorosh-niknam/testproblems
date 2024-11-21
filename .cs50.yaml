@@ -1,7 +1,8 @@
 check50: 
+  
   files: &check50_files
     - !exclude "*"
-    - !require degrees.py
-
+    - !require "degrees.py"
+  checks:"degrees.py"
 submit50:
   files: *check50_files
