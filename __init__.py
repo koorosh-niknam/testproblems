@@ -44,4 +44,4 @@ def checks_for_handling_non_alpha():
 @check50.check(compiles)
 def handles_no_argv():
     """handles lack of argv[1]"""
-    check50.run("./degrees").exit(1)
+    check50.run("degrees").exit(1)
