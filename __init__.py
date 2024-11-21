@@ -3,12 +3,12 @@ import check50.c
 
 @check50.check()
 def exists():
-    """caesar.c exists."""
+    """degrees.py exists."""
     check50.exists("degrees.py")
 
 @check50.check(exists)
 def compiles():
-    """caesar.c compiles."""
+    """degrees.py compiles."""
     check50.c.compile("degrees.py", lcs50=True)
 
 @check50.check(compiles)
