@@ -1,6 +1,6 @@
 check50:
   checks:
     hello world:
-      - run: python3 hello.py
+      - run: python3 \\wsl.localhost\Ubuntu\tmp\tmphf58g12q\hello_world\hello.py
         stdout: Hello, world!
         exit: 0
