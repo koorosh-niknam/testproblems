@@ -1,5 +1,5 @@
 import check50
-import check50.c
+import check50.py
 
 @check50.check()
 def exists():
@@ -9,7 +9,7 @@ def exists():
 @check50.check(exists)
 def compiles():
     """degrees.py compiles."""
-    check50.c.compile("degrees.py", lcs50=True)
+    check50.py.compile("degrees.py", lcs50=True)
 
 @check50.check(compiles)
 def encrypts_a_as_b():
