@@ -9,7 +9,7 @@ def exists():
 @check50.check(exists)
 def compiles():
     """degrees.py compiles."""
-    check50.compile("degrees.py")
+    check50.py.compile("degrees.py")
 
 @check50.check(compiles)
 def encrypts_a_as_b():
