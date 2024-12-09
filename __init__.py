@@ -15,7 +15,7 @@ int main(int argc, string argv[])
             // Returns error message if key includes anything other than digits
             if (isdigit(argv[1][i]) == false)
             {
-                printf("Usage: ./caesar key\n");
+                printf("Usage: ./degrees key\n");
                 return 1;
             }
         }
@@ -46,10 +46,10 @@ int main(int argc, string argv[])
         printf("\n");
         return 0;
     }
-    // Returns an error message if the code isn't executed in proper format, i.e, "./caesar key"
+    // Returns an error message if the code isn't executed in proper format, i.e, "./degrees key"
     else
     {
-        printf("Usage: ./caesar key\n");
+        printf("Usage: ./degrees key\n");
         return 1;
     }
 }
