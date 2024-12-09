@@ -2,10 +2,6 @@ import csv
 import sys 
 from util import Node, QueueFrontier
 
-import check50
-import check50.c
-check50.check()
-
 # Maps names to a set of corresponding person_ids
 names = {}
 
