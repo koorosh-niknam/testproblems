@@ -1,3 +1,0 @@
-check50 --local F:\python\degrees\degrees
-
-\\wsl$\Ubuntu\home\ali\degrees
