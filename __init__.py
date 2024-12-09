@@ -4,12 +4,12 @@ import check50.py
 @check50.check()
 def exists():
     """degrees.py exists."""
-    check50.exists("cesar.py")
+    check50.exists("cesar.c")
 
 @check50.check(exists)
 def compiles():
     """degrees.py compiles."""
-    check50.py.compile("cesar.py")
+    check50.py.compile("cesar.c")
 
 @check50.check(compiles)
 def encrypts_a_as_b():
