@@ -1,7 +1,7 @@
 check50: 
   files: &check50_files
     - !exclude "*"
-    - !require degrees.py
+    - !require caesar.py
 
 submit50:
   files: *check50_files
