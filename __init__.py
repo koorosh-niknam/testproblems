@@ -1,47 +1,55 @@
-import check50
-import check50.py
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
 
-@check50.check()
-def exists():
-    """degrees.py exists."""
-    check50.exists("degrees.py")
+int main(int argc, string argv[])
+{
+    // Confirms there are two arguments included to run the program
+    if (argc == 2)
+    {
+        // Iterates on the key in command line and ensures it is a positive integer
+        for (int i = 0; i < strlen(argv[1]); i++)
+        {
+            // Returns error message if key includes anything other than digits
+            if (isdigit(argv[1][i]) == false)
+            {
+                printf("Usage: ./caesar key\n");
+                return 1;
+            }
+        }
+        int k = atoi(argv[1]);
 
-@check50.check(exists)
-def compiles():
-    """degrees.py compiles."""
-    check50.py.compile("degrees.py")
+        string plaintext = get_string("plaintext: ");
+        printf("ciphertext: ");
 
-@check50.check(compiles)
-def encrypts_a_as_b():
-    """encrypts "a" as "b" using 1 as key"""
-    check50.run("./degrees 1").stdin("a").stdout("ciphertext:\s*b\n", "ciphertext: b\n").exit(0)
-
-@check50.check(compiles)
-def encrypts_barfoo_as_yxocll():
-    """encrypts "barfoo" as "yxocll" using 23 as key"""
-    check50.run("./degrees 23").stdin("barfoo").stdout("ciphertext:\s*yxocll\n", "ciphertext: yxocll\n").exit(0)
-
-@check50.check(compiles)
-def encrypts_BARFOO_as_EDUIRR():
-    """encrypts "BARFOO" as "EDUIRR" using 3 as key"""
-    check50.run("./degrees 3").stdin("BARFOO").stdout("ciphertext:\s*EDUIRR\n", "ciphertext: EDUIRR\n").exit(0)
-
-@check50.check(compiles)
-def encrypts_BaRFoo_FeVJss():
-    """encrypts "BaRFoo" as "FeVJss" using 4 as key"""
-    check50.run("./degrees 4").stdin("BaRFoo").stdout("ciphertext:\s*FeVJss\n", "ciphertext: FeVJss\n").exit(0)
-
-@check50.check(compiles)
-def encrypts_barfoo_as_onesbb():
-    """encrypts "barfoo" as "onesbb" using 65 as key"""
-    check50.run("./degrees 65").stdin("barfoo").stdout("ciphertext:\s*onesbb\n", "ciphertext: onesbb\n").exit(0)
-
-@check50.check(compiles)
-def checks_for_handling_non_alpha():
-    """encrypts "world, say hello!" as "iadxp, emk tqxxa!" using 12 as key"""
-    check50.run("./degrees 12").stdin("world, say hello!").stdout("ciphertext:\s*iadxp, emk tqxxa!\n", "ciphertext: iadxp, emk tqxxa!\n").exit(0)
-
-@check50.check(compiles)
-def handles_no_argv():
-    """handles lack of argv[1]"""
-    check50.run("degrees").exit(1)
+        // Reads the plaintext and converts it it ciphertext
+        for (int i = 0; i < strlen(plaintext); i++)
+        {
+            // Converts all the lower letter alphabets
+            if (plaintext[i] >= 'a' && plaintext[i] <= 'z')
+            {
+                printf("%c", ((((plaintext[i] - 'a') + k) % 26) + 'a'));
+            }
+            // Converts all the upper letter alphabets
+            else if (plaintext[i] >= 'A' && plaintext[i] <= 'Z')
+            {
+                printf("%c", ((((plaintext[i] - 'A') + k) % 26) + 'A'));
+            }
+            // Returns any character other thatn alphabets as such
+            else
+            {
+                printf("%c", plaintext[i]);
+            }
+        }
+        printf("\n");
+        return 0;
+    }
+    // Returns an error message if the code isn't executed in proper format, i.e, "./caesar key"
+    else
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+}
